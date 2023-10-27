@@ -1,8 +1,8 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const MovieCard = ({ movie: { imdbID, Year, Poster, Title, Type } }) => {
   return (
-    <div className="movie" key={imdbID}>
+    <Link to={`/movie/${imdbID}`} className="movie">
       <div>
         <p>{Year}</p>
       </div>
@@ -13,12 +13,11 @@ const MovieCard = ({ movie: { imdbID, Year, Poster, Title, Type } }) => {
           alt={Title}
         />
       </div>
-
       <div>
         <span>{Type}</span>
         <h3>{Title}</h3>
       </div>
-    </div>
+    </Link>
   );
 };
 
