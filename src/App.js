@@ -22,6 +22,12 @@ const App = () => {
     setMovies(data.Search);
   };
 
+  const handleSearch = (e) => {
+    if (e.key === "Enter") {
+      searchMovies(searchTerm);
+    }
+  };
+
   return (
     <Router>
       <div className="app">
@@ -31,7 +37,9 @@ const App = () => {
           <input
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
+            onKeyDown={handleSearch}
             placeholder="Search for movies"
+            
           />
           <img
             src={SearchIcon}
