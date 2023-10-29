@@ -18,7 +18,7 @@ body {
 }
 
 .app {
-  padding: 4rem;
+  padding: 2rem;
 
   display: flex;
   justify-content: center;
@@ -26,7 +26,7 @@ body {
   flex-direction: column;
 }
 
-h1 {
+h1:not(#h1) {
   font-size: 3rem;
   letter-spacing: 0.9px;
   background: linear-gradient(
@@ -41,7 +41,7 @@ h1 {
 }
 
 .search {
-  width: 71%;
+  width: 60%;
   margin: 4rem 0 2rem;
 
   display: flex;
@@ -161,6 +161,41 @@ h1 {
   bottom: 0;
   right: 0;
   left: 0;
+}
+
+/* Mvoie Details style */
+.movieContainer {
+  display: flex; /* Use flexbox for layout */
+}
+
+.movieImage {
+  flex: 1; /* Take up half of the available space (adjust as needed) */
+  margin-right: 20px; /* Add some spacing between the poster and details */
+}
+
+
+
+
+#h1{
+  font-size: 4em;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: inherit;
+  color: #a1a1a1;
+}
+.infoMovie {
+  flex: 2; /* Adjust the width as needed */
+  color: #fff; /* Set the text color to white */
+  padding: 25px; /* Add some padding for spacing */
+}
+
+.infoMovie h2 {
+  font-size: 24px; /* Customize the title font size */
+  margin-bottom: 10px; /* Add margin below the title */
+}
+
+.infoMovie p {
+  font-size: 16px; /* Customize the paragraph font size */
+  margin: 20px 0; /* Add some vertical margin between paragraphs */
 }
 
 .movie div:nth-of-type(3) span {

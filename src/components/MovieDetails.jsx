@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { BeatLoader } from "react-spinners";
 
 const MovieDetails = () => {
   const { imdbID } = useParams();
@@ -27,17 +28,28 @@ const MovieDetails = () => {
   return (
     <div className="movie-details">
       {movieDetails ? (
-        <div>
-          <h2>{movieDetails.Title}</h2>
-          <p>{movieDetails.Plot}</p>
-          <p>Director: {movieDetails.Director}</p>
-          <p>Actors: {movieDetails.Actors}</p>
-          <p>Genre: {movieDetails.Genre}</p>
-          <p>Runtime: {movieDetails.Runtime}</p>
-          <p>IMDb Rating: {movieDetails.imdbRating}</p>
+        <div className="movieContainer">
+          <div className="movieImage">
+            <img alt="moviePoster" src={movieDetails.Poster} />
+          </div>
+          <div className="infoMovie">
+            <h1 id="h1">{movieDetails.Title}</h1>
+            <p>Plot: {movieDetails.Plot}</p>
+            <p>Director: {movieDetails.Director}</p>
+            <p>Actors: {movieDetails.Actors}</p>
+            <p>Genre: {movieDetails.Genre}</p>
+            <p>Runtime: {movieDetails.Runtime}</p>
+            <p>IMDb Rating: {movieDetails.imdbRating}</p>
+          </div>
         </div>
       ) : (
         <div className="empty">
+          <BeatLoader
+            size={15} // Adjust the size of the loader as needed
+            color={"#f9d3b4"} // Change the loader color
+            loading={true}
+            padding={10}
+          />
           <h2>Loading movie details...</h2>
         </div>
       )}
