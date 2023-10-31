@@ -63,7 +63,7 @@ const MovieList = ({ movies }) => (
       movies.map((movie) => <MovieCard movie={movie} />)
     ) : (
       <div className="empty">
-        <h2>No movies found</h2>
+        <h2>No movies found try something else</h2>
       </div>
     )}
   </div>
